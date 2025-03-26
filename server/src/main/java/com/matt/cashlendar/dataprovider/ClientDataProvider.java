@@ -17,7 +17,7 @@ public class ClientDataProvider implements ClientGateway {
     private ClientRepository clientRepository;
 
     @Override
-    public ClientEntity createClient(ClientEntity clientEntity) {
+    public ClientEntity create(ClientEntity clientEntity) {
         try {
             ClientTable table = ClientTableMapper.to(clientEntity);
 

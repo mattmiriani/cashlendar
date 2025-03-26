@@ -22,7 +22,7 @@ public class ClientEntrypoint {
     @PostMapping
     public ResponseEntity<?> createClient(@RequestBody ClientRequestHttpModel clientRequestHttpModel) {
         ClientEntity clientEntity = ClientRequestHttpModelMapper.from(clientRequestHttpModel);
-        ClientEntity client = clientUseCase.createClient(clientEntity);
+        ClientEntity client = clientUseCase.create(clientEntity);
 
         return ResponseEntity.ok().body(ClientRequestHttpModelMapper.to(client));
     }

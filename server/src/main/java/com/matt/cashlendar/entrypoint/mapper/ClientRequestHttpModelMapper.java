@@ -2,6 +2,8 @@ package com.matt.cashlendar.entrypoint.mapper;
 
 import com.matt.cashlendar.core.entity.ClientEntity;
 import com.matt.cashlendar.entrypoint.entity.ClientRequestHttpModel;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.Optional;
 
@@ -21,6 +23,6 @@ public class ClientRequestHttpModelMapper {
                         .email(client.getEmail())
                         .password(client.getPassword())
                         .build())
-                .orElse(ClientEntity.builder().build());
+                .orElseThrow(() -> new HttpClientErrorException(HttpStatus.INTERNAL_SERVER_ERROR, "Client cannot be null"));
     }
 }
