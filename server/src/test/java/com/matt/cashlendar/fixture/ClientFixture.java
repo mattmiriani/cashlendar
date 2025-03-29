@@ -46,7 +46,6 @@ public class ClientFixture {
         return ClientRequestHttpModel.builder()
                         .name("John Doe")
                         .email("john.doe@example.com")
-                        .password("password123")
                         .build();
     }
 }

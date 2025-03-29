@@ -10,11 +10,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientRequestHttpModel {
+public class LoginRequestHttpModel {
 
-    @JsonAlias({"clientName"})
-    private String name;
-    @JsonAlias({"clientEmail"})
-    private String email;
+    @JsonAlias({"username"})
+    private String username;
+    @JsonAlias({"password"})
+    private String password;
+    @JsonAlias({"token"})
+    private String token;
 
 }

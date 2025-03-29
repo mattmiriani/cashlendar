@@ -21,7 +21,6 @@ public class ClientRequestHttpModelMapper {
                 ClientEntity.builder()
                         .name(client.getName())
                         .email(client.getEmail())
-                        .password(client.getPassword())
                         .build())
                 .orElseThrow(() -> new HttpClientErrorException(HttpStatus.INTERNAL_SERVER_ERROR, "Client cannot be null"));
     }

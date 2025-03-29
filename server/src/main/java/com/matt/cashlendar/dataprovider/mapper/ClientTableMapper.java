@@ -15,6 +15,7 @@ public class ClientTableMapper {
 
     public static ClientEntity from(ClientTable table) {
         return ClientEntity.builder()
+                .id(table.getId())
                 .name(table.getName())
                 .email(table.getEmail())
                 .password(table.getPassword())

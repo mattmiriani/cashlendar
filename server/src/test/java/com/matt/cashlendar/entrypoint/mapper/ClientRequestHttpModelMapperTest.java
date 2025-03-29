@@ -22,7 +22,6 @@ class ClientRequestHttpModelMapperTest {
 
             assertEquals(clientEntity.getName(), result.getName());
             assertEquals(clientEntity.getEmail(), result.getEmail());
-            assertNull(result.getPassword());
         }
     }
 
@@ -36,7 +35,6 @@ class ClientRequestHttpModelMapperTest {
 
             assertEquals(clientRequestHttpModel.getName(), result.getName());
             assertEquals(clientRequestHttpModel.getEmail(), result.getEmail());
-            assertEquals(clientRequestHttpModel.getPassword(), result.getPassword());
         }
 
         @Test
