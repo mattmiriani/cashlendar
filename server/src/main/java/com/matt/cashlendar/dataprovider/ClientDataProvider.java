@@ -1,6 +1,6 @@
 package com.matt.cashlendar.dataprovider;
 
-import com.matt.cashlendar.configuration.exception.DataBaseException;
+import com.matt.cashlendar.configuration.exception.CashlendarException;
 import com.matt.cashlendar.core.entity.ClientEntity;
 import com.matt.cashlendar.core.gateway.ClientGateway;
 import com.matt.cashlendar.dataprovider.entity.ClientTable;
@@ -27,7 +27,7 @@ public class ClientDataProvider implements ClientGateway {
 
             return clientEntity;
         } catch(Exception e) {
-            throw new DataBaseException("Error in client registration!", e);
+            throw new CashlendarException("Error in client registration!");
         }
     }
 }
