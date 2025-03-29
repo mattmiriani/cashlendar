@@ -1,17 +1,17 @@
 package com.matt.cashlendar.entrypoint;
 
 import com.matt.cashlendar.core.usecase.SecurityUseCase;
-import com.matt.cashlendar.entrypoint.entity.ClientRequestHttpModel;
 import com.matt.cashlendar.entrypoint.entity.LoginRequestHttpModel;
 import com.matt.cashlendar.entrypoint.entity.RegisterRequestHttpModel;
-import com.matt.cashlendar.entrypoint.mapper.ClientRequestHttpModelMapper;
 import com.matt.cashlendar.entrypoint.mapper.LoginRequestHttpModelMapper;
 import com.matt.cashlendar.entrypoint.mapper.RegisterRequestHttpModelMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/security")
