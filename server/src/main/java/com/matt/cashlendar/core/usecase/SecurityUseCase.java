@@ -6,6 +6,7 @@ import com.matt.cashlendar.core.entity.ClientEntity;
 import com.matt.cashlendar.core.gateway.SecurityGateway;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -32,9 +33,9 @@ public class SecurityUseCase {
 
         if (passwordEncoder.matches(password, clientEntity.getPassword())) {
             return tokenService.generateToken(clientEntity);
+        } else {
+            throw new CashlendarException("Invalid credentials!", HttpStatus.UNAUTHORIZED);
         }
-
-        return null;
     }
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
